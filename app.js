@@ -1,12 +1,8 @@
 var express = require('express');
-
 var app = express();
-
-
 
 app.get('/', function(req, res) {
     var softwareRegex = /\(([^\)]+)\)/;
-    
     var software = req.headers['user-agent'].match(softwareRegex)
     
     console.log(software);
