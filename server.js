@@ -2,6 +2,10 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
+    res.end("Access the API at /api/whoami");
+});
+
+app.get('/api/whoami', function(req, res) {
     var softwareRegex = /\(([^\)]+)\)/;
     var software = req.headers['user-agent'].match(softwareRegex)
     
